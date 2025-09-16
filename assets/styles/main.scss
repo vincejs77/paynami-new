@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+body {
+    @apply bg-gray-300;
+    font-family: "Inter", sans-serif !important;
+}
+
+#app {
+    @apply max-w-md sm:mx-auto bg-white min-h-screen;
+}
+
+.main-layout,
+.top-bar {
+    @apply max-w-md sm:mx-auto bg-white z-[999];
+}
+
+input {
+    @apply rounded-xl bg-gray-100 px-4 py-3 focus:border-2 focus:border-gray-800;
+    outline-style: none;
+    border: 2px solid #dddddd4a;
+}
+
+.btn-primay {
+    @apply bg-gray-800 text-white px-8 py-3 rounded-xl font-semibold;
+}
+
+.p-container {
+    @apply px-8 px-4;
+}
+
+@import url(./inputs.scss);

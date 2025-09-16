@@ -1,0 +1,105 @@
+.custom-field {
+    position: relative;
+    font-size: 16px;
+    border-top: 20px solid transparent;
+    margin-bottom: 5px;
+    display: inline-block;
+    --field-padding: 12px;
+}
+
+.custom-field input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 12px 28px;
+    min-width: 250px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    @apply rounded-xl bg-gray-200;
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    left: var(--field-padding);
+    width: calc(100% - (var(--field-padding) * 2));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 25px;
+    @apply text-gray-500;
+    line-height: 100%;
+    transform: translateY(-50%);
+    transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    -webkit-transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    -moz-transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    -ms-transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    -o-transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+    top: -10px;
+    font-size: 14px;
+}
+
+.custom-field .error-message:empty {
+    opacity: 0;
+}
+
+.custom-field.one input {
+    border: 2px solid #dddddd4a;
+    transition: border-color 0.3s ease;
+}
+
+.custom-field.one input + .placeholder {
+    left: 24px;
+    padding: 0 6px;
+}
+
+select:focus,
+select:not(:checked),
+.custom-field.one input.dirty,
+.custom-field.one input:not(:placeholder-shown) {
+    @apply border-gray-200 bg-gray-50;
+    transition-delay: 0.1s;
+}
+
+.custom-field.one input:focus {
+    @apply border-gray-600;
+    transition-delay: 0.1s;
+    background: white;
+}
+
+.custom-field.one input.dirty + .placeholder,
+.custom-field.one input:not(:placeholder-shown) + .placeholder,
+.custom-field.one input:focus + .placeholder {
+    top: 0;
+    font-size: 14px;
+    width: auto;
+    @apply bg-white text-gray-500;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @apply w-full rounded-xl bg-gray-100 text-gray-800;
+    padding: 12px 24px !important;
+    border: 2px solid #dddddd6a;
+}
+
+select:focus {
+    border: 2px solid #dddddd64 !important;
+    @apply border-gray-200;
+
+    transition-delay: 0.1s;
+    background: white;
+}
